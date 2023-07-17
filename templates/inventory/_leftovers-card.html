@@ -1,0 +1,28 @@
+<div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4">
+  <div class="card h-100">
+    <div class="card-body">
+      <h5 class="card-title">{{ object.title | truncatechars:40 }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{ object.subtitle | truncatechars:40 }}</h6>
+      {% if object.purchased_by %}
+        <h6 class="card-subtitle mb-2 text-success">
+          <del>${{ object.price }}</del>
+          (purchased!)
+        </h6>
+      {% else %}
+        <h6 class="card-subtitle mb-2 text-primary">${{ object.price }}</h6>
+      {% endif %}
+
+      <p class="card-text">{{ object.details | truncatechars:80 }}</p>
+      <a href="{% url 'leftovers-detail' object.id %}" class="card-link">More Info</a>
+      {% if not object.purchased_by %}
+        {% if object.sold_by == user %}
+          <a href="{% url 'leftovers-edit' object.id %}" class="card-link">Edit</a>
+          <a href="{% url 'leftovers-delete' object.id %}" class="card-link text-danger">Delete</a>
+        {% else %}
+          <a href="{% url 'leftovers-purchase' object.id %}" class="card-link">Buy</a>
+        {% endif %}
+      {% endif %}
+
+    </div>
+  </div>
+</div>

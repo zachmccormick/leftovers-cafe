@@ -1,0 +1,18 @@
+{% extends "web/base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+  <div class="container">
+    <div class="row my-5">
+      <div class="col-md-12">
+        <form action="" method="post">
+          {% csrf_token %}
+          <p>Are you sure you want to purchase "{{ object }}"?</p>
+          {% bootstrap_form form %}
+          <a class="btn btn-secondary" href="{% url "leftovers-detail" object.id %}">Back</a>
+          <button type="submit" class="btn btn-primary">Confirm</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

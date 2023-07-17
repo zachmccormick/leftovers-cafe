@@ -1,0 +1,27 @@
+{% extends "web/base.html" %}
+
+{% block content %}
+  <div class="col-12">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">{{ object.title }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ object.subtitle }}</h6>
+        <h6 class="card-subtitle mb-2 text-primary">${{ object.price }}</h6>
+        <p class="card-text">{{ object.details }}</p>
+        <hr/>
+        <p class="card-text">Sold by: {{ object.sold_by }}</p>
+        {% if object.purchased_by %}
+          <p class="card-text text-success">Purchased by: {{ object.purchased_by }}</p>
+        {% else %}
+          {% if object.sold_by == user %}
+            <a href="{% url 'leftovers-edit' object.id %}" class="card-link">Edit</a>
+            <a href="{% url 'leftovers-delete' object.id %}" class="card-link text-danger">Delete</a>
+          {% else %}
+            <a href="{% url 'leftovers-purchase' object.id %}" class="card-link">Buy</a>
+          {% endif %}
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+{% endblock %}

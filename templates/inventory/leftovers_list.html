@@ -1,0 +1,12 @@
+{% extends "web/base.html" %}
+
+{% block content %}
+  <div class="row m-4" data-masonry='{"percentPosition": true }'>
+    {% for leftover in object_list %}
+      {% include 'inventory/_leftovers-card.html' with object=leftover %}
+    {% empty %}
+      <p>Hmm... there seems to be nothing here!</p>
+    {% endfor %}
+  </div>
+
+{% endblock %}

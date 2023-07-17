@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "leftovers-cafe"
+version = "0.1.0"
+description = ""
+authors = ["Zach McCormick <zach@braze.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.11.4"
+Django = "^4.2.3"
+psycopg2-binary = "^2.9.6"
+dj-database-url = "^2.0.0"
+pytz = "^2023.3"
+django-extensions = "^3.2.3"
+ipython = "^8.14.0"
+celery = "^5.3.1"
+whitenoise = "^6.5.0"
+gevent = "^23.7.0"
+waitress = "^2.1.2"
+hiredis = "^2.2.3"
+django-redis-cache = "^3.0.1"
+django-celery-results = "^2.5.1"
+django-allauth = { git = "https://github.com/zachmccormick/django-allauth.git", branch = "zachmccormick-patch-1" }
+python-dotenv = "^1.0.0"
+django-bootstrap5 = "^23.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
