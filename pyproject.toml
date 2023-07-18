@@ -23,6 +23,7 @@ django-celery-results = "^2.5.1"
 django-allauth = { git = "https://github.com/zachmccormick/django-allauth.git", branch = "zachmccormick-patch-1" }
 python-dotenv = "^1.0.0"
 django-bootstrap5 = "^23.3"
+ddtrace = "^1.16.1"
 
 
 [build-system]
