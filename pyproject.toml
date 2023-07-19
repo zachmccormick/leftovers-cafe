@@ -24,6 +24,7 @@ django-allauth = { git = "https://github.com/zachmccormick/django-allauth.git", 
 python-dotenv = "^1.0.0"
 django-bootstrap5 = "^23.3"
 ddtrace = "^1.16.1"
+django-decorator-include = "^3.0"
 
 
 [build-system]
